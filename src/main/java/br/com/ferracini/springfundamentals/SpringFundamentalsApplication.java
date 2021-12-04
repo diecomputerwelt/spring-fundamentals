@@ -14,9 +14,11 @@ public class SpringFundamentalsApplication {
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		SpeakerService service = applicationContext.getBean("speakerService", SpeakerService.class);
-
+		System.out.println(service);
 		System.out.println(service.findAll());
 
+		SpeakerService service2 = applicationContext.getBean("speakerService", SpeakerService.class);
+		System.out.println(service2);
 		//SpringApplication.run(SpringFundamentalsApplication.class, args);
 	}
 
