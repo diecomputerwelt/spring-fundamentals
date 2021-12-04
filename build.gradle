@@ -8,14 +8,23 @@ group = 'br.com.ferracini'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+ext{
+	vavrVersion = '0.10.4'
+	springBootVersion = '2.6.1'
+	springFrameworkVersion = '5.3.13'
+	springBootStartTestVersion = ''
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework:spring-context'
+	implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+	implementation "org.springframework:spring-context:$springFrameworkVersion"
+	implementation "io.vavr:vavr:$vavrVersion"
+
+	testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
 }
 
 test {
