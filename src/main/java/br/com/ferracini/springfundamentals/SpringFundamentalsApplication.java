@@ -1,5 +1,6 @@
 package br.com.ferracini.springfundamentals;
 
+import br.com.ferracini.config.AppConfig;
 import br.com.ferracini.service.SpeakerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
