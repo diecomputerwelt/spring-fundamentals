@@ -7,41 +7,36 @@ public class Speaker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "speaker_id")
-    private Long speakerId;
-    @Column(name = "first_name")
-    private String firstName;
-    @Column(name = "last_name")
-    private String lastName;
-    @Column(name = "title")
+    private Long speaker_id;
+
+    private String first_name;
+    private String last_name;
     private String title;
-    @Column(name = "company")
     private String company;
-    @Column(name = "speaker_bio")
-    private String speakerBio;
+    private String speaker_bio;
 
     public Long getSpeakerId() {
-        return speakerId;
+        return speaker_id;
     }
 
     public void setSpeakerId(Long speakerId) {
-        this.speakerId = speakerId;
+        this.speaker_id = speakerId;
     }
 
     public String getFirstName() {
-        return firstName;
+        return first_name;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.first_name = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return last_name;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.last_name = lastName;
     }
 
     public String getTitle() {
@@ -61,22 +56,22 @@ public class Speaker {
     }
 
     public String getSpeakerBio() {
-        return speakerBio;
+        return speaker_bio;
     }
 
     public void setSpeakerBio(String speakerBio) {
-        this.speakerBio = speakerBio;
+        this.speaker_bio = speakerBio;
     }
 
     @Override
     public String toString() {
         return "Speaker{" +
-                "speakerId=" + speakerId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                "speakerId=" + speaker_id +
+                ", firstName='" + first_name + '\'' +
+                ", lastName='" + last_name + '\'' +
                 ", title='" + title + '\'' +
                 ", company='" + company + '\'' +
-                ", speakerBio='" + speakerBio + '\'' +
+                ", speakerBio='" + speaker_bio + '\'' +
                 '}';
     }
 }
