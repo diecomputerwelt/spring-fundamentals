@@ -1,9 +1,6 @@
 package br.com.ferracini.model;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "speakers")
 public class Speaker {
@@ -22,13 +19,6 @@ public class Speaker {
     private String company;
     @Column(name = "speaker_bio")
     private String speakerBio;
-
-    @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
-    private byte[] speakerPhoto;
-
-    @ManyToMany(mappedBy = "speakers")
-    private List<Session> sessions;
 
     public Long getSpeakerId() {
         return speakerId;
@@ -76,22 +66,6 @@ public class Speaker {
 
     public void setSpeakerBio(String speakerBio) {
         this.speakerBio = speakerBio;
-    }
-
-    public List<Session> getSessions() {
-        return sessions;
-    }
-
-    public void setSessions(List<Session> sessions) {
-        this.sessions = sessions;
-    }
-
-    public byte[] getSpeakerPhoto() {
-        return speakerPhoto;
-    }
-
-    public void setSpeakerPhoto(byte[] speakerPhoto) {
-        this.speakerPhoto = speakerPhoto;
     }
 
     @Override
