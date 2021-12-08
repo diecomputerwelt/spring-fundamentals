@@ -1,7 +1,7 @@
 package br.com.ferracini.service;
 
 import br.com.ferracini.model.Speaker;
-import br.com.ferracini.repository.SpeakRepository;
+import br.com.ferracini.repository.SpeakerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class SpeakerServiceImpl implements SpeakerService {
     Logger logger = LoggerFactory.getLogger(SpeakerServiceImpl.class);
 
     @Autowired
-    private SpeakRepository repository;
+    private SpeakerRepository repository;
 
     public SpeakerServiceImpl() {
         logger.info("SpeakerServiceImpl no args constructor");
