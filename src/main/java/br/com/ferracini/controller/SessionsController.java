@@ -24,7 +24,7 @@ public class SessionsController {
     @GetMapping
     @RequestMapping("{id}")
     public Session get(@PathVariable Long id){
-        return sessionRepository.getById(id);
+        return sessionRepository.findById(id).orElseThrow();
     }
 
     @PostMapping
@@ -40,7 +40,7 @@ public class SessionsController {
 
     @PutMapping(value = "{id}")
     public Session update(@PathVariable Long id, @RequestBody Session session){
-        Session existingSession = sessionRepository.getById(id);
+        var existingSession = sessionRepository.findById(id).orElseThrow();
         BeanUtils.copyProperties(session, existingSession, "session_id");
         return sessionRepository.saveAndFlush(existingSession);
     }

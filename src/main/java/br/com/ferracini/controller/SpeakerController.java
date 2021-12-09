@@ -21,10 +21,10 @@ public class SpeakerController {
         return speakerRepository.findAll();
     }
 
-    @GetMapping
-    @RequestMapping("{id}")
+    @GetMapping(value = "{id}")
     public Speaker get(@PathVariable Long id) {
-        return speakerRepository.getById(id);
+        var speaker = speakerRepository.findById(id);
+        return speaker.orElseThrow();
     }
 
     @PostMapping
@@ -42,7 +42,7 @@ public class SpeakerController {
     @PutMapping(value = "{id}")
     public Speaker update(@PathVariable Long id, @RequestBody Speaker speaker) {
         //TODO: Add validation that all attributes are passed id, otherwise return 400 Bad Request
-        Speaker existingSpeaker = speakerRepository.getById(id);
+        var existingSpeaker = speakerRepository.findById(id).orElseThrow();
         BeanUtils.copyProperties(speaker, existingSpeaker, "session_id");
         return speakerRepository.saveAndFlush(existingSpeaker);
     }
