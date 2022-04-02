@@ -11,10 +11,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/speakers")
+
 public class SpeakerController {
 
     @Autowired
     private SpeakerRepository speakerRepository;
+
+    public SpeakerController() {
+    }
+
+    public SpeakerController(SpeakerRepository speakerRepository) {
+        this.speakerRepository = speakerRepository;
+    }
 
     @GetMapping
     public List<Speaker> list() {
