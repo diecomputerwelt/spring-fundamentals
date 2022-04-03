@@ -16,6 +16,10 @@ public class SessionsController {
     @Autowired
     private SessionRepository sessionRepository;
 
+    public SessionsController(SessionRepository sessionRepository) {
+        this.sessionRepository = sessionRepository;
+    }
+
     @GetMapping
     public List<Session> list() {
         return sessionRepository.findAll();
