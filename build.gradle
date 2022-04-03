@@ -1,36 +1,36 @@
 plugins {
-	id 'org.springframework.boot' version '2.6.1'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.6.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 }
 
 group = 'br.com.ferracini'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-ext{
-	vavrVersion = '0.10.4'
-	springBootVersion = '2.6.1'
-	springFrameworkVersion = '5.3.13'
-	postgresVersion = '42.3.1'
+ext {
+    vavrVersion = '0.10.4'
+    springBootVersion = '2.6.1'
+    springFrameworkVersion = '5.3.13'
+    postgresVersion = '42.3.1'
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
-	implementation "org.springframework:spring-context:$springFrameworkVersion"
-	implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
-	implementation "io.vavr:vavr:$vavrVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    implementation "org.springframework:spring-context:$springFrameworkVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    implementation "io.vavr:vavr:$vavrVersion"
 
-	runtimeOnly "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
-	runtimeOnly "org.postgresql:postgresql:$postgresVersion"
+    runtimeOnly "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+    runtimeOnly "org.postgresql:postgresql:$postgresVersion"
 
-	testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
