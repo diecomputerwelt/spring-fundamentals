@@ -1,5 +1,6 @@
-package br.com.ferracini.controller;
+package br.com.ferracini.unittests;
 
+import br.com.ferracini.controller.SessionsController;
 import br.com.ferracini.model.Session;
 import br.com.ferracini.repository.SessionRepository;
 import org.hamcrest.CoreMatchers;

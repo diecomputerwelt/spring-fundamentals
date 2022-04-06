@@ -1,4 +1,4 @@
-package br.com.ferracini.springfundamentals;
+package br.com.ferracini;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

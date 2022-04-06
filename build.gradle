@@ -27,6 +27,7 @@ dependencies {
 
     runtimeOnly "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
     runtimeOnly "org.postgresql:postgresql:$postgresVersion"
+    runtimeOnly 'com.h2database:h2'
 
     testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
 }

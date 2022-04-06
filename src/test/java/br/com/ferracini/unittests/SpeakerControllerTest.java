@@ -1,4 +1,4 @@
-package br.com.ferracini;
+package br.com.ferracini.unittests;
 
 import br.com.ferracini.controller.SpeakerController;
 import br.com.ferracini.model.Speaker;
