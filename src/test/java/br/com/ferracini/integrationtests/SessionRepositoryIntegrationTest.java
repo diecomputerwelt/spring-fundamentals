@@ -1,13 +1,11 @@
 package br.com.ferracini.integrationtests;
 
 import br.com.ferracini.model.Session;
-import br.com.ferracini.model.Speaker;
 import br.com.ferracini.repository.SessionRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -15,8 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @DisplayName(value = "Session repository integration test")
-@DataJpaTest
-class SessionRepositoryIntegrationTest {
+class SessionRepositoryIntegrationTest extends BaseIntegrationTest {
 
     @Autowired
     private SessionRepository subject;
