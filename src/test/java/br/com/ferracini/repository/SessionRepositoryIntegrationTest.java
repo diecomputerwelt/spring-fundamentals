@@ -1,7 +1,6 @@
-package br.com.ferracini.integrationtests;
+package br.com.ferracini.repository;
 
 import br.com.ferracini.model.Session;
-import br.com.ferracini.repository.SessionRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,10 +27,8 @@ class SessionRepositoryIntegrationTest extends BaseIntegrationTest {
     @Test
     @DisplayName(value = "should save and fetch session")
     void shouldSaveAndFetchSessionTest() {
-        var session = new Session();
-        session.setSessionLength(45);
-        session.setSessionName("Keynote - The Golden Age of Software");
-        session.setSessionDescription("Test description");
+
+        var session = new Session("Keynote - The Golden Age of Software","Test description",45);
 
         var expectedSession = subject.saveAndFlush(session);
 

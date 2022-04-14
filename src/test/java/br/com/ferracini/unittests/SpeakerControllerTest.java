@@ -31,13 +31,7 @@ class SpeakerControllerTest {
     void setUp() {
         openMocks(this);
         subject = new SpeakerController(speakerRepository);
-        speaker = new Speaker();
-        speaker.setSpeakerId(1L);
-        speaker.setFirstName("Freddy");
-        speaker.setLastName("Mercury");
-        speaker.setCompany("Test company");
-        speaker.setTitle("Test title");
-        speaker.setSpeakerBio("Test bio");
+        speaker = new Speaker("Freddy", "Mercury", "Test company", "Test title", "Test bio");
     }
 
     @Order(1)

@@ -1,4 +1,4 @@
-package br.com.ferracini.integrationtests;
+package br.com.ferracini.repository;
 
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 

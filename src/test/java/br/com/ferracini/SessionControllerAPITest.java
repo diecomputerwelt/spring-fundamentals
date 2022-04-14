@@ -4,6 +4,7 @@ import br.com.ferracini.controller.SessionsController;
 import br.com.ferracini.controller.SpeakerController;
 import br.com.ferracini.repository.SessionRepository;
 import br.com.ferracini.repository.SpeakerRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -25,6 +26,7 @@ class SessionControllerAPITest {
     private SpeakerRepository speakerRepository;
 
     @Test
+    @DisplayName(value = "should return session")
     void shouldReturnSession() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/sessions"))
                 .andExpect(MockMvcResultMatchers.status().is2xxSuccessful());

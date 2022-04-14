@@ -1,7 +1,6 @@
-package br.com.ferracini.integrationtests;
+package br.com.ferracini.repository;
 
 import br.com.ferracini.model.Speaker;
-import br.com.ferracini.repository.SpeakerRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,12 +24,7 @@ class SpeakerRepositoryIntegrationTest extends BaseIntegrationTest {
     @Test
     @DisplayName(value = "should save and fetch speaker")
     void shouldSaveAndFetchSpeaker() {
-        var speaker = new Speaker();
-        speaker.setFirstName("Freddy");
-        speaker.setLastName("Mercury");
-        speaker.setCompany("Test company");
-        speaker.setTitle("Test title");
-        speaker.setSpeakerBio("Test bio");
+        var speaker = new Speaker("Freddy", "Mercury", "Test company", "Test title", "Test bio");
 
         var expectedSpeaker = subject.saveAndFlush(speaker);
 

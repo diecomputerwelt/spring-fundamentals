@@ -10,7 +10,7 @@ import java.util.List;
 public class Session {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "session_id")
     private Long sessionId;
 
@@ -29,6 +29,15 @@ public class Session {
             joinColumns = @JoinColumn(name = "session_id"),
             inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     private List<Speaker> speakers;
+
+    public Session() {
+    }
+
+    public Session(String sessionName, String sessionDescription, Integer sessionLength) {
+        this.sessionName = sessionName;
+        this.sessionDescription = sessionDescription;
+        this.sessionLength = sessionLength;
+    }
 
     public Long getSessionId() {
         return sessionId;

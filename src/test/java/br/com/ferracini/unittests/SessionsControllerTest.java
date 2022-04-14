@@ -34,11 +34,7 @@ class SessionsControllerTest {
     void setUp() {
         openMocks(this);
         subject = new SessionsController(sessionRepository);
-        session = new Session();
-        session.setSessionId(1L);
-        session.setSessionLength(45);
-        session.setSessionName("Keynote - The Golden Age of Software");
-        session.setSessionDescription("Test description");
+        session = new Session("Keynote - The Golden Age of Software", "Test description",45);
     }
 
     @Test
