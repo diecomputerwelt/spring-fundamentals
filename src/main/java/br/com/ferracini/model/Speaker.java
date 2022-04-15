@@ -13,7 +13,7 @@ import java.util.List;
 public class Speaker {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "speaker_id")
     private Long speakerId;
 

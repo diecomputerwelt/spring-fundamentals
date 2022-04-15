@@ -1,10 +1,13 @@
 package br.com.ferracini.repository;
 
 import br.com.ferracini.model.Speaker;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.event.annotation.AfterTestClass;
 
 import static java.text.MessageFormat.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -12,12 +15,13 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName(value = "Speaker repository integration test")
-class SpeakerRepositoryIntegrationTest extends BaseIntegrationTest {
+@DataJpaTest
+class SpeakerRepositoryIntegrationTest {
 
     @Autowired
     private SpeakerRepository subject;
 
-    @AfterEach
+    @AfterTestClass
     void tearDown() {
         subject.deleteAll();
     }

@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "br.com.ferracini.repository")
 @ComponentScan(basePackages = {"br.com.ferracini.controller"})
-
+@EntityScan("br.com.ferracini.*")
 public class SpringFundamentalsApplication {
     static Logger logger = LoggerFactory.getLogger(SpringFundamentalsApplication.class.getName());
 
