@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static java.text.MessageFormat.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,11 +25,12 @@ class SpeakerRepositoryIntegrationTest extends BaseIntegrationTest {
     @Test
     @DisplayName(value = "should save and fetch speaker")
     void shouldSaveAndFetchSpeaker() {
+        long expectedId = 1L;
         var speaker = new Speaker("Freddy", "Mercury", "Test company", "Test title", "Test bio");
 
         var expectedSpeaker = subject.saveAndFlush(speaker);
 
         assertThat(expectedSpeaker, is(speaker));
-        assertEquals(1L, expectedSpeaker.getSpeakerId());
+        assertEquals(expectedId, expectedSpeaker.getSpeakerId(), format("Speaker ids are not equals: expected:{0}, received:{1}", expectedId, expectedSpeaker.getSpeakerId()));
     }
 }
