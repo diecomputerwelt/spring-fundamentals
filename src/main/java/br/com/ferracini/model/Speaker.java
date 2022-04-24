@@ -40,6 +40,17 @@ public class Speaker {
     @JsonIgnore
     private List<Session> sessions;
 
+    public Speaker() {
+    }
+
+    public Speaker(String firstName, String lastName, String title, String company, String speakerBio) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+        this.company = company;
+        this.speakerBio = speakerBio;
+    }
+
     public Long getSpeakerId() {
         return speakerId;
     }
